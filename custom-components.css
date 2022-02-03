@@ -1,0 +1,186 @@
+/*checkbox start*/
+.custom-checkbox {
+  --color: hsl(0deg, 0%, 40%);
+  --size: 20px;
+  --checked-color: dodgerblue;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var();
+  margin: 0;
+  box-sizing: border-box;
+  font: inherit;
+  color: currentColor;
+  width: var(--size);
+  height: var(--size);
+  border: calc(var(--size) / 10) solid var(--color);
+  border-radius: calc(var(--size) / 10);
+  transform: translateY(calc(var(--size) / -20));
+  display: inline-grid;
+  place-content: center;
+  transition: 50ms box-shadow ease-in-out;
+}
+
+.custom-checkbox::before {
+  content: "";
+  width: calc(var(--size) / 2);
+  height: calc(var(--size) / 2);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 50ms transform ease-in-out;
+  box-shadow: inset calc(var(--size) * 0.87) calc(var(--size) * 0.87)
+    var(--checked-color);
+  background-color: CanvasText;
+}
+
+.custom-checkbox:checked::before {
+  transform: scale(1);
+}
+
+.custom-checkbox:active {
+  box-shadow: 0px 0px 0px calc(var(--size) / 2) hsla(0deg, 0%, 80%, 0.5);
+}
+
+.custom-checkbox:disabled {
+  color: hsl(0deg, 0%, 90%);
+  cursor: not-allowed;
+}
+/*checkbox end*/
+/*radio button start*/
+.custom-radio-button {
+  --color: hsl(0deg, 0%, 40%);
+  --checked-color: dodgerblue;
+  --size: 20px;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  color: var(--color);
+  width: var(--size);
+  height: var(--size);
+  border: calc(var(--size) / 10) solid var(--color);
+  border-radius: 50%;
+  transform: translateY(calc(var(--size) / -20));
+  display: inline-grid;
+  place-content: center;
+  box-sizing: border-box;
+  transition: 50ms box-shadow ease-in-out;
+}
+
+.custom-radio-button::before {
+  content: "";
+  width: calc(var(--size) / 2);
+  height: calc(var(--size) / 2);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 50ms transform ease-in-out;
+  box-shadow: inset calc(var(--size) / 2) calc(var(--size) / 2)
+    var(--checked-color);
+  background-color: CanvasText;
+}
+
+.custom-radio-button:checked::before {
+  transform: scale(1);
+}
+.custom-radio-button:active {
+  box-shadow: 0px 0px 0px calc(var(--size) / 2) hsla(0deg, 0%, 80%, 0.5);
+}
+/*radio button end*/
+/*slider start*/
+.custom-slider {
+  --height: 4px;
+  --thumb-size: 20px;
+  --color: blue;
+  --margin-adjust: none;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  height: var(--height);
+  background-color: #d5d5d5;
+  border-radius: var(--height);
+  outline: none;
+  cursor: pointer;
+}
+.custom-slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: var(--height);
+}
+.custom-slider::-moz-track {
+  -moz-appearance: none;
+  height: var(--height);
+}
+.custom-slider::-ms-track {
+  appearance: none;
+  height: var(--height);
+}
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: var(--thumb-size);
+  width: var(--thumb-size);
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: var(--margin-adjust);
+  border: calc(var(--thumb-size) * 0.15) solid var(--color);
+  transition: border 0.01s ease-in-out, background-color 0.01s ease-in-out;
+}
+.custom-slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: var(--thumb-size);
+  width: var(--thumb-size);
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 0;
+  border: calc(var(--thumb-size) * 0.15) solid var(--color);
+  transition: border 0.01s ease-in-out, background-color 0.01s ease-in-out;
+}
+.custom-slider::-ms-thumb {
+  appearance: none;
+  height: var(--thumb-size);
+  width: var(--thumb-size);
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 0;
+  border: calc(var(--thumb-size) * 0.15) solid var(--color);
+  transition: border 0.01s ease-in-out, background-color 0.01s ease-in-out;
+}
+.custom-slider:active::-webkit-slider-thumb {
+  background-color: var(--color);
+  border: none;
+}
+.custom-slider:active::-moz-range-thumb {
+  background-color: var(--color);
+  border: none;
+}
+.custom-slider:active::-ms-thumb {
+  background-color: var(--color);
+  border: none;
+}
+/*slider end*/
+/*ripple button start*/
+.custom-ripple-button {
+  position: relative;
+  overflow: hidden;
+}
+
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+/*ripple button end*/

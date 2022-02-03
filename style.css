@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+:root {
+  --size: 80vw;
+}
+.container {
+  width: min(400px, var(--size));
+  margin: 32px auto;
+}
+.viewer {
+  position: relative;
+  width: 100%;
+  max-height: 474px;
+}
+main {
+  width: min(400px, var(--size));
+  height: min(400px, var(--size));
+  border-radius: 6px;
+  border: 5px solid #afafaf;
+  margin-bottom: 24px;
+}
+.res-pause {
+  margin: 0 auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.res-pause button {
+  width: 50px;
+  height: 50px;
+  margin: 0 12px;
+  border: none;
+  background-color: #fa528f;
+  border-radius: 50%;
+  color: #fff;
+}
+.res-pause button span {
+  line-height: 50px;
+}
+.controls {
+  margin-top: 32px;
+}
+p {
+  margin-bottom: 32px;
+}
+p label {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #949494;
+}
+p input {
+  display: inline-block;
+  width: 100%;
+}
+.tends-to {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+  height: 120px;
+}
+button{
+  cursor: pointer;
+}
+button:active{
+  filter: brightness(0.8);
+}
+.tends-to button {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background-color: #fa528f;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+}
+.tends-to button span {
+  line-height: 40px;
+}
+button[value="up"],
+button[value="down"] {
+  margin: 0px 40px;
+}
+@supports (grid-area: auto) {
+  @media screen and (min-width: 1000px) {
+    body {
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+    .container {
+      width: 960px;
+      display: grid;
+      align-items: top;
+      margin: 0px;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 160px;
+    }
+    .viewer {
+      width: 400px;
+      margin: 0px;
+    }
+    .controls {
+      margin: 0px;
+    }
+  }
+}

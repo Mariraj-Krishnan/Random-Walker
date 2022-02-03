@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Walker</title>
+    <link rel="stylesheet" href="custom-components.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <script src="script.js" defer></script>
+    <script src="custom-components.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container" onresize="setup()">
+      <div class="viewer">
+        <main></main>
+        <div class="res-pause">
+          <button onclick="setup()">
+            <span class="material-icons md-32">replay</span>
+          </button>
+          <button onclick="pause(this)">
+            <span class="material-icons md-32">pause</span>
+          </button>
+        </div>
+      </div>
+      <form action="#" class="controls">
+        <p class="inputs">
+          <label for="walker-size">Walker size</label><br />
+          <input
+            class="custom-slider"
+            data-color="#fa528f"
+            type="range"
+            id="walker-size"
+            min="1"
+            max="20"
+            value="1"
+            step="0.1"
+            oninput="getInputs()"
+          />
+        </p>
+
+        <p class="inputs">
+          <label for="step-size">Step size</label><br />
+          <input
+            class="custom-slider"
+            data-color="#fa528f"
+            type="range"
+            id="step-size"
+            min="1"
+            max="20"
+            value="1"
+            step="0.1"
+            oninput="getInputs()"
+          />
+        </p>
+
+        <p class="inputs">
+          <label for="speed">Speed</label><br />
+          <input
+            class="custom-slider"
+            data-color="#fa528f"
+            type="range"
+            id="speed"
+            min="1"
+            max="60"
+            value="10"
+            step="1"
+            oninput="getInputs()"
+          />
+        </p>
+
+        <div class="tends-to">
+          <button class="dir" value="up" onclick="getInputs(this.value)">
+            <span class="material-icons">keyboard_arrow_up</span>
+          </button>
+          <button class="dir" value="left" onclick="getInputs(this.value)">
+            <span class="material-icons">keyboard_arrow_left</span>
+          </button>
+          <button class="dir" value="right" onclick="getInputs(this.value)">
+            <span class="material-icons">keyboard_arrow_right</span>
+          </button>
+          <button class="dir" value="down" onclick="getInputs(this.value)">
+            <span class="material-icons">keyboard_arrow_down</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
