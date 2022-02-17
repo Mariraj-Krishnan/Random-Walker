@@ -27,8 +27,6 @@ function getInputs(selectedDir) {
   speed = parseInt(document.getElementById("speed").value);
   if(selectedDir){
     dir=selectedDir;
-    console.log(selectedDir)
-    draw();
   }
 }
 getInputs();
